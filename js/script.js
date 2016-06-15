@@ -5,7 +5,7 @@ app.controller("myCtrl", function ($scope) {
         $scope.errortext = "";
         if (!$scope.addMe) {
             $scope.error = false;
-            $scope.errortext = "Enter something and press Add";
+            $scope.errortext = "Typein something and press Add /Enter";
             return;
         }
         if ($scope.addMe) {
@@ -19,7 +19,7 @@ app.controller("myCtrl", function ($scope) {
                 tobeAdded = false;
                 return true;
             }
-     
+
         });
         if (tobeAdded) {
             $scope.products.push($scope.addMe);
