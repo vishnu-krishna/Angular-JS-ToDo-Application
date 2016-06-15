@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS ToDo Application</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>
+    <link href="css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div ng-app="mytodoController" ng-cloak ng-controller="myCtrl">
+            <header class="navbar navbar-default header">
+                <h3>My ToDo List</h3>
+            </header>
+            <ul class="list-group">
+                <li ng-repeat="product in products track by $index" class="list-group-item listing">
+                    <span style="cursor:pointer;" class="fa fa-space-shuttle icon"></span> {{product}}
+                    <span ng-click="removeItem($index)" style="cursor:pointer;" class="fa fa-trash"></span>
+                </li>
+            </ul>
+
+            <div class="w3-container w3-light-grey w3-padding-hor-16">
+                <div>
+                    <div>
+                        <input placeholder="Add shopping items here" ng-model="addMe" class="input-sm">
+                    </div>
+                    <div>
+                        <button ng-click="addItem()" class="btn btn-info">Add</button>
+                    </div>
+                </div>
+                <p ng-show="error=true" class="error">{{errortext}}</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+</body>
+
+</html>
